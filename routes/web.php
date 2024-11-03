@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProvaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,6 +31,9 @@ Route::prefix('admin')->group(function () {
 });
 
 // posso dare un nome alle rotte per poi richiamarle in giro per il codice tramite route('nome rotta')
-Route::get('/rottanominata', [FintoController::class], 'nome funzione del finto controller')->name('nome rotta');
-route('nome rotta');
+//Route::get('/rottanominata', [FintoController::class], 'nome funzione del finto controller')->name('nome rotta');
+//route('nome rotta');
 
+// per creare un controllo utilizzo il comando di artisan make:controller: php artisan make:controller NomeController
+// il primo parametro della rotta è l'url, il secondo è un array con il nome del controller da richiamare ed il nome della funzione da utilizzare
+Route::get('/prova', [ProvaController::class, 'provaFunction']);
