@@ -37,3 +37,5 @@ Route::prefix('admin')->group(function () {
 // per creare un controllo utilizzo il comando di artisan make:controller: php artisan make:controller NomeController
 // il primo parametro della rotta è l'url, il secondo è un array con il nome del controller da richiamare ed il nome della funzione da utilizzare
 Route::get('/prova', [ProvaController::class, 'provaFunction']);
+// rotta in post, riceve dati da un input e chiama la function provaDatache li prende e li mostra
+Route::post('/prova', [ProvaController::class, 'provaData']);
